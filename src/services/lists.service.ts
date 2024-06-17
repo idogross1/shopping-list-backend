@@ -30,6 +30,7 @@ export const create = (list: Omit<List, 'items' | '_id' | 'date'>): List => {
 
 export const getByUserId = (userId: string): List[] => {
   const lists: List[] = getListsByUserId(userId);
+  console.log('🚀 ~ getByUserId ~ lists:', lists);
   return lists;
 };
 

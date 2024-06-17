@@ -14,6 +14,7 @@ const itemsDB = [
     category: 'fruit',
   },
 ];
+
 export const getItems = (): Item[] => {
   const items: Item[] = getAllItems();
   return items;
