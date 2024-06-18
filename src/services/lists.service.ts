@@ -20,7 +20,7 @@ const listsDB = [
 export const create = (list: Omit<List, 'items' | '_id' | 'date'>): List => {
   const { name, userId } = list;
   return {
-    _id: '12ek',
+    _id: '' + Date.now(),
     name,
     userId,
     items: [],
