@@ -1,8 +1,8 @@
 import { List } from '../interfaces/List';
 
-const listsDB = [
+const listsDB: List[] = [
   {
-    _id: '12ek',
+    _id: '1718719756494',
     name: 'shoppingList',
     userId: 'ncsidjnc',
     items: [],
@@ -37,6 +37,12 @@ export const getByUserId = (userId: string): List[] => {
 export const getByListId = (listId: string): List | undefined => {
   const list: List | undefined = getListByListId(listId);
   return list;
+};
+
+export const update = (updatedList: List): List | undefined => {
+  let listIndex: number = listsDB.findIndex((l) => l._id === updatedList._id);
+  listsDB[listIndex] = { ...listsDB[listIndex], ...updatedList };
+  return listsDB[listIndex];
 };
 
 // DB functions
